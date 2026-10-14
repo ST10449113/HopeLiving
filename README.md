@@ -68,5 +68,5 @@ Live website: https://st10449113.github.io/HopeLiving/
 - Updated internal navigation links.
 - Added responsive CSS rules for different screen sizes.
 
-*Update this changelog if further changes are made before submission.*
+
 

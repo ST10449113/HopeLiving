@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Hope of Living</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+        <div class="container header-content">
+
+            <a class="logo" href="index.html">
+                Hope <span>of Living</span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="enquiry.html">Get Involved</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">LET'S TALK</p>
+      <h1>Contact us</h1>
+      <p class="lead">Have a general question or want to share a message?</p>
+    </div>
+  </section>
+
+  <section class="container section form-layout">
+    <div>
+      <h2>Get in touch</h2>
+      <p><strong>Hope of Living</strong></p>
+      <p><strong>Location:</strong> Lower Philipp, Cape Town, South Africa</p>
+      <p><strong>Email:</strong> Add the organisation's verified email address.</p>
+      <p><strong>Office hours:</strong> Add confirmed hours if applicable.</p>
+      <div class="notice">Replace these placeholders with verified details from your assignment brief.</div>
+    </div>
+
+    <form class="form" id="contact-form" data-mail-form>
+      <label for="contact-name">Full name *</label>
+      <input id="contact-name" name="Full name" required minlength="2">
+
+      <label for="contact-email">Email address *</label>
+      <input id="contact-email" name="Email" type="email" required>
+
+      <label for="contact-type">Message type *</label>
+      <select id="contact-type" name="Message type" required>
+        <option value="">Choose a message type</option>
+        <option>General question</option><option>Feedback</option>
+        <option>Volunteer interest</option><option>Partnership</option>
+        <option>Website issue</option><option>Other</option>
+      </select>
+
+      <label for="contact-message">Message *</label>
+      <textarea id="contact-message" name="Message" rows="6" minlength="10" maxlength="1500" required></textarea>
+
+      <button class="btn" type="submit">Prepare message email</button>
+      <p class="feedback" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+<footer><div class="container"><p>© 2026 Hope of Living.</p></div></footer>
+</body>
+</html>

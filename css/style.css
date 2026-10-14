@@ -571,3 +571,43 @@ textarea:focus-visible {
         padding: 45px 5%;
     }
 }
+
+/* Part 2: Responsive design for screens below 960px */
+@media screen and (max-width: 960px) {
+    .container {
+        width: 92%;
+        max-width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .header-content {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 550px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

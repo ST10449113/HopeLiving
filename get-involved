@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Involved | Hope of Living</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <a class="brand" href="index.html">HOPE <span>OF LIVING</span></a>
+    <button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="get-involved.html" class="active">Get Involved</a>
+      <a href="enquiry.html">Enquiries</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">MAKE A DIFFERENCE</p>
+      <h1>Get Involved</h1>
+      <p class="lead">
+        Every contribution matters. Explore ways to support Hope of Living
+        and help build a stronger community.
+      </p>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="center">
+      <h2>How can you get involved?</h2>
+      <p>Choose an opportunity that interests you and contact us for more information.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <h3>Volunteer</h3>
+        <p>Share your time, skills and ideas to support community initiatives.</p>
+        <a href="enquiry.html?topic=Volunteering">Enquire about volunteering →</a>
+      </article>
+
+      <article class="card">
+        <h3>Become a Partner</h3>
+        <p>Explore possible partnerships that support community development.</p>
+        <a href="enquiry.html?topic=Sponsorship">Discuss a partnership →</a>
+      </article>
+
+      <article class="card">
+        <h3>Spread the Word</h3>
+        <p>Help others discover the organisation and the opportunities it may offer.</p>
+        <a href="contact.html">Contact us →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <h2>Small actions can create hope.</h2>
+      <p>Contact us to find out how you can participate.</p>
+      <a class="btn btn-light" href="contact.html">Get in touch</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Hope of Living.</p>
+  </div>
+</footer>
+
+</body>
+</html>

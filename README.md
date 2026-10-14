@@ -2,91 +2,71 @@
 
 ## 1. Project Overview
 
-Hope of Living is a community-focused website designed to share information, highlight opportunities and help visitors make enquiries. The website uses a green, orange, gold and cream colour scheme to represent hope, growth, warmth and community.
+Hope of Living is a community focused website for an organization based in Lower Philipp, Cape Town, South Africa. The website aims to communicate information about the organization, its services, community involvement and contact options.
 
-The website is intended to provide visitors with a simple and user-friendly experience across desktop, tablet and mobile devices.
+## 2. Website Pages
 
-## 2. Project Objectives
+- **Home (`index.html`):** Introduces Hope of Living and its purpose.
+- **About Us (`about.html`):** Explains the organisation's mission, vision and values.
+- **Services (`services.html`):** Presents service and cultural wear information and enquiry links.
+- **Get Involved (`get-involved.html`):** Provides information about volunteering, partnerships and supporting cultural wear.
+- **Enquiry (`enquiry.html`):** Allows visitors to prepare enquiries about services, volunteering, partnerships, sponsorships and cultural wear.
+- **Contact (`contact.html`):** Provides contact information and a form for general messages.
 
-The objectives of this website are to:
+## 3. Technologies Used
 
-- Provide information about Hope of Living.
-- Introduce visitors to the services and opportunities available.
-- Allow visitors to make product and service enquiries.
-- Provide a contact form for general questions and feedback.
-- Create a responsive and accessible website.
+- HTML5 for website structure.
+- CSS3 for styling, page layouts and responsive design.
+- JavaScript for client-side form validation and interaction.
+- GitHub for version control and hosting through GitHub Pages.
 
-## 3. Website Pages
+## 4. Styling and Responsive Design
 
-The website consists of five HTML pages:
+The website uses an external stylesheet located at `css/style.css`. Shared styling is used to maintain consistency across pages.
 
-1. **Home (`index.html`)** – Introduces Hope of Living and provides links to other pages.
-2. **About (`about.html`)** – Explains the organisation's background, mission, vision and values.
-3. **Services (`services.html`)** – Presents service categories and opportunities for enquiries.
-4. **Enquiries (`enquiry.html`)** – Allows visitors to ask about services, products, volunteering, sponsorship, costs and availability.
-5. **Contact (`contact.html`)** – Provides contact information and a form for general messages.
+Responsive CSS media queries adjust layouts for smaller screens. The website should be tested at desktop, tablet and mobile sizes to check readability, navigation and horizontal scrolling.
 
-## 4. Technologies Used
+## 5. Forms and Validation
 
-- **HTML5:** Used to structure the website pages.
-- **CSS3:** Used to style the website, including colours, layouts, navigation and responsive design.
-- **JavaScript:** Used for mobile navigation, form validation and preparing email messages.
-- **GitHub:** Used for version control and storing the project files.
-- **GitHub Pages:** Used to publish the website online.
+The enquiry form includes required fields and browser-based validation. It prepares an email for the visitor to review and send.
 
-## 5. Project Structure
+The contact and enquiry forms are front end functionality. They do not automatically store submissions on a server. The organization's verified email address must be configured before the email feature can be used.
 
-The website files are organised as follows:
+## 6. Improvements to Part 1
 
-- `docs/`
-  - `index.html`
-  - `about.html`
-  - `services.html`
-  - `enquiry.html`
-  - `contact.html`
-  - `css/style.css`
-  - `js/script.js`
-- `README.md`
+The following improvements should be confirmed against the original version before final submission:
 
-The `docs` folder is used as the GitHub Pages publishing folder. The HTML pages link to the shared stylesheet and JavaScript file using relative paths.
+- Consistent navigation between the website pages.
+- Improved visual consistency through shared CSS.
+- Responsive layouts for smaller screens.
+- Clearer service and community information.
+- Enquiry options for volunteering, partnerships, sponsorships and cultural wear.
+- Improved form labels and validation.
 
-## 6. Responsive Design
+## 7. Testing
 
-CSS media queries are used to adjust the website layout for different screen sizes. The navigation menu becomes a mobile menu on smaller screens, and the page layouts and cards adjust to fit smaller devices.
+The website should be tested by:
 
-## 7. Form Functionality
+- Opening every page and checking that it loads correctly.
+- Testing navigation and all internal links.
+- Checking the layout on desktop and mobile screens.
+- Submitting forms with missing and valid information.
+- Confirming that images and CSS load correctly.
+- Checking the GitHub Pages deployment.
 
-The enquiry and contact forms use HTML validation to check required fields and email formats. JavaScript collects the entered information and prepares an email message.
+## 8. Publishing
 
-The forms are a front-end demonstration. They do not store submissions on a server. A verified recipient email address must be configured, and the visitor needs a compatible email application to send the prepared message.
+The website is hosted using GitHub Pages from the `main` branch and the repository root folder (`/`).
 
-## 8. Testing
+Live website: https://st10449113.github.io/HopeLiving/
 
-The following tests should be completed before submission:
+## 9. Changelog
 
-- Check that all navigation links open the correct pages.
-- Confirm that CSS styling loads on every page.
-- Test the layout on desktop and mobile screen sizes.
-- Check required fields and email validation on both forms.
-- Confirm that the email preparation functionality works.
-- Open the published website and check that all files load correctly.
+- Updated website styling and shared page layouts.
+- Added and corrected the Get Involved page.
+- Added enquiry form fields for service and community enquiries.
+- Updated internal navigation links.
+- Added responsive CSS rules for different screen sizes.
 
-## 9. Version Control and Changelog
-
-The project is stored in a GitHub repository. GitHub Desktop is used to commit and push changes.
-
-### Changelog
-
-- Created the initial website structure.
-- Added the Home, About, Services, Enquiries and Contact pages.
-- Added a shared CSS stylesheet.
-- Added responsive layouts and navigation styling.
-- Added JavaScript for mobile navigation and form validation.
-- Added a README file describing the project and testing process.
-
-Update this changelog as further changes are made.
-
-## 10. Conclusion
-
-The Hope of Living website provides a structured, responsive platform for sharing information and allowing visitors to make enquiries. HTML, CSS and JavaScript work together to provide the website's structure, appearance and basic interactivity.
+*Update this changelog if further changes are made before submission.*
 

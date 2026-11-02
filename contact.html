@@ -1,78 +1,261 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
--->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Hope of Living</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="js/script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Hope of Living</title>
+
+    <meta name="description" content="Contact Hope of Living with questions, feedback and enquiries about community support and programmes.">
+
+    <meta name="keywords" content="Contact Hope of Living, community support, Lower Philippi, contact information">
+
+    <meta name="author" content="Hope of Living">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<!-- Website header and navigation -->
-    <header class="site-header">
-        <div class="container header-content">
 
-            <a class="logo" href="index.html">
-                Hope <span>of Living</span>
-            </a>
-
-            <nav class="main-nav" aria-label="Main navigation">
-                <a href="./index.html" class="active">Home</a>
-                <a href="./about.html">About Us</a>
-                <a href="./services.html">Services</a>
-                <a href="./enquiry.html">Get Involved</a>
-                <a href="./contact.html">Contact</a>
-            </nav>
-
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <h2>Hope of Living</h2>
         </div>
+
+        <button id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="enquiry.html">Get Involved</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-<main>
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">LET'S TALK</p>
-      <h1>Contact us</h1>
-      <p class="lead">Have a general question or want to share a message?</p>
-    </div>
-  </section>
 
-  <section class="container section form-layout">
-    <div>
-      <h2>Get in touch</h2>
-      <p><strong>Hope of Living</strong></p>
-      <p><strong>Location:</strong> Lower Philipp, Cape Town, South Africa</p>
-      <p><strong>Email:</strong> hopeofliving.co.za</p>
-      <p><strong>Office hours:</strong> 08:00-17:00.</p>
-      <p>strong>Tel: 021 675 3245</p>
-    </div>
+    <!-- MAIN CONTENT -->
+    <main>
 
-    <form class="form" id="contact-form" data-mail-form>
-      <label for="contact-name">Full name *</label>
-      <input id="contact-name" name="Full name" required minlength="2">
+        <!-- CONTACT INTRODUCTION -->
+        <section class="services-section">
+            <h1>Contact Hope of Living</h1>
 
-      <label for="contact-email">Email address *</label>
-      <input id="contact-email" name="Email" type="email" required>
+            <p>
+                We would love to hear from you. Contact us if you
+                have questions, suggestions, feedback or would
+                like more information about our community programmes.
+            </p>
+        </section>
 
-      <label for="contact-type">Message type *</label>
-      <select id="contact-type" name="Message type" required>
-        <option value="">Choose a message type</option>
-        <option>General question</option><option>Feedback</option>
-        <option>Volunteer interest</option><option>Partnership</option>
-        <option>Website issue</option><option>Other</option>
-      </select>
+        <!-- CONTACT INFORMATION -->
+        <section class="services-section">
 
-      <label for="contact-message">Message *</label>
-      <textarea id="contact-message" name="Message" rows="6" minlength="10" maxlength="1500" required></textarea>
+            <h2>Our Contact Information</h2>
 
-      <button class="btn" type="submit">Prepare message email</button>
-      <p class="feedback" aria-live="polite"></p>
-    </form>
-  </section>
-</main>
-<footer><div class="container"><p>© 2026 Hope of Living.</p></div></footer>
+            <p>
+                <strong>Organisation:</strong> Hope of Living
+            </p>
+
+            <p>
+                <strong>Location:</strong> Lower Philippi,
+                Cape Town, South Africa.
+            </p>
+
+            <p>
+                Please use the contact form below to send us
+                your message.
+            </p>
+
+        </section>
+
+        <!-- CONTACT FORM -->
+        <section class="form-section">
+
+            <h2>Send Us a Message</h2>
+
+            <form id="contactForm" action="#" method="post">
+
+                <!-- NAME -->
+                <label for="contactName">Full Name *</label>
+
+                <input
+                    type="text"
+                    id="contactName"
+                    name="name"
+                    placeholder="Enter your full name"
+                    minlength="2"
+                    maxlength="60"
+                    required>
+
+                <!-- EMAIL -->
+                <label for="contactEmail">Email Address *</label>
+
+                <input
+                    type="email"
+                    id="contactEmail"
+                    name="email"
+                    placeholder="example@email.com"
+                    required>
+
+                <!-- PHONE -->
+                <label for="contactPhone">Phone Number *</label>
+
+                <input
+                    type="tel"
+                    id="contactPhone"
+                    name="phone"
+                    placeholder="e.g. 0821234567"
+                    pattern="(\+27|0)[6-8][0-9]{8}"
+                    title="Enter a valid South African mobile number."
+                    required>
+
+                <!-- MESSAGE TYPE -->
+                <label for="messageType">Message Type *</label>
+
+                <select
+                    id="messageType"
+                    name="messageType"
+                    required>
+
+                    <option value="">Select message type</option>
+                    <option value="General Enquiry">General Enquiry</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Complaint">Complaint</option>
+                    <option value="Volunteering">Volunteering</option>
+                    <option value="Sponsorship">Sponsorship</option>
+                    <option value="Other">Other</option>
+
+                </select>
+
+                <!-- MESSAGE -->
+                <label for="contactMessage">Your Message *</label>
+
+                <textarea
+                    id="contactMessage"
+                    name="message"
+                    rows="6"
+                    minlength="10"
+                    maxlength="1000"
+                    placeholder="Write your message here..."
+                    required></textarea>
+
+                <!-- SUBMIT -->
+                <button type="submit" class="button">
+                    Send Message
+                </button>
+
+                <p id="contactResponse"
+                   role="status"
+                   aria-live="polite"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Hope of Living. All rights reserved.</p>
+
+        <p>Building hope through community support.</p>
+
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About Us</a> |
+            <a href="services.html">Services</a>
+        </p>
+    </footer>
+
+    <!-- MAIN JAVASCRIPT -->
+    <script src="script.js" defer></script>
+
+    <!-- CONTACT FORM VALIDATION -->
+    <script>
+        const contactForm = document.getElementById("contactForm");
+
+        if (contactForm) {
+
+            contactForm.addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const name =
+                    document.getElementById("contactName").value.trim();
+
+                const email =
+                    document.getElementById("contactEmail").value.trim();
+
+                const phone =
+                    document.getElementById("contactPhone").value.trim();
+
+                const messageType =
+                    document.getElementById("messageType").value;
+
+                const message =
+                    document.getElementById("contactMessage").value.trim();
+
+                const response =
+                    document.getElementById("contactResponse");
+
+                const phonePattern = /^(\+27|0)[6-8][0-9]{8}$/;
+
+                response.textContent = "";
+
+                if (!contactForm.checkValidity()) {
+                    contactForm.reportValidity();
+                    return;
+                }
+
+                if (!phonePattern.test(phone)) {
+                    response.textContent =
+                        "Please enter a valid South African mobile number.";
+                    return;
+                }
+
+                const subject = encodeURIComponent(
+                    "Hope of Living - " + messageType
+                );
+
+                const body = encodeURIComponent(
+                    "Name: " + name +
+                    "\nEmail: " + email +
+                    "\nPhone: " + phone +
+                    "\nMessage type: " + messageType +
+                    "\n\nMessage:\n" + message
+                );
+
+                // Replace this with the organisation's real email address.
+                const organisationEmail =
+                    "REPLACE-WITH-REAL-EMAIL@example.com";
+
+                const emailLink =
+                    "mailto:" + organisationEmail +
+                    "?subject=" + subject +
+                    "&body=" + body;
+
+                response.textContent =
+                    "Your details are valid. Your email application will open so you can send your message.";
+
+                response.style.color = "green";
+
+                window.location.href = emailLink;
+
+            });
+
+        }
+    </script>
+
 </body>
 </html>

@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://st10449113.github.io/HopeLiving/sitemap.xml

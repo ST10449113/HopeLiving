@@ -9,7 +9,7 @@
 
     <meta name="description" content="Get involved with Hope of Living. Enquire about volunteering, community programmes and ways to support the community.">
 
-    <meta name="keywords" content="Hope of Living, volunteer, community support, get involved, Lower Philippi">
+    <meta name="keywords" content="Hope of Living, volunteering, community support, donations, Lower Philippi">
 
     <meta name="author" content="Hope of Living">
     <meta name="robots" content="index, follow">
@@ -51,9 +51,9 @@
             <h1>Get Involved</h1>
 
             <p>
-                Would you like to become part of Hope of Living?
-                Complete the form below to enquire about our
-                community programmes and opportunities.
+                Become part of Hope of Living. Complete the form
+                below to enquire about volunteering, community
+                programmes, donations or sponsorship opportunities.
             </p>
         </section>
 
@@ -62,9 +62,8 @@
 
             <h2>Community Enquiry Form</h2>
 
-            <form id="enquiryForm">
+            <form id="enquiryForm" action="#" method="post">
 
-                <!-- FULL NAME -->
                 <label for="enquiryName">Full Name *</label>
 
                 <input
@@ -76,7 +75,6 @@
                     maxlength="60"
                     required>
 
-                <!-- EMAIL -->
                 <label for="enquiryEmail">Email Address *</label>
 
                 <input
@@ -86,7 +84,6 @@
                     placeholder="example@email.com"
                     required>
 
-                <!-- PHONE -->
                 <label for="enquiryPhone">Phone Number *</label>
 
                 <input
@@ -98,11 +95,9 @@
                     title="Enter a valid South African mobile number."
                     required>
 
-                <!-- ENQUIRY TYPE -->
-                <label for="enquiryType">What are you interested in? *</label>
+                <label for="enquiryType">Enquiry Type *</label>
 
                 <select id="enquiryType" name="enquiryType" required>
-
                     <option value="">Select an option</option>
                     <option value="Volunteering">Volunteering</option>
                     <option value="Community Support">Community Support</option>
@@ -111,19 +106,16 @@
                     <option value="Sponsorship">Sponsorship</option>
                     <option value="Donations">Donations</option>
                     <option value="Other">Other</option>
-
                 </select>
 
-                <!-- PREFERRED DATE -->
-                <label for="enquiryDate">Preferred Date (if applicable)</label>
+                <label for="enquiryDate">Preferred Date (optional)</label>
 
                 <input
                     type="date"
                     id="enquiryDate"
                     name="preferredDate">
 
-                <!-- MESSAGE -->
-                <label for="enquiryMessage">Tell us more about your enquiry *</label>
+                <label for="enquiryMessage">Tell Us More *</label>
 
                 <textarea
                     id="enquiryMessage"
@@ -131,18 +123,18 @@
                     rows="5"
                     minlength="10"
                     maxlength="500"
-                    placeholder="Write your enquiry here..."
+                    placeholder="Explain what you would like to enquire about..."
                     required></textarea>
 
-                <!-- SUBMIT -->
                 <button type="submit" class="button">
                     Submit Enquiry
                 </button>
 
-                <p id="enquiryResponse" role="status" aria-live="polite"></p>
+                <p id="enquiryResponse"
+                   role="status"
+                   aria-live="polite"></p>
 
             </form>
-
         </section>
 
     </main>
@@ -160,8 +152,58 @@
         </p>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- PAGE JAVASCRIPT -->
     <script src="script.js" defer></script>
+
+    <!-- ENQUIRY FORM VALIDATION -->
+    <script>
+        const enquiryForm = document.getElementById("enquiryForm");
+
+        if (enquiryForm) {
+            enquiryForm.addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const phone = document.getElementById("enquiryPhone");
+                const date = document.getElementById("enquiryDate");
+                const response = document.getElementById("enquiryResponse");
+
+                const phonePattern = /^(\+27|0)[6-8][0-9]{8}$/;
+
+                response.textContent = "";
+
+                if (!enquiryForm.checkValidity()) {
+                    enquiryForm.reportValidity();
+                    return;
+                }
+
+                if (!phonePattern.test(phone.value.trim())) {
+                    response.textContent =
+                        "Please enter a valid South African mobile number.";
+                    return;
+                }
+
+                if (date.value) {
+                    const selectedDate = new Date(date.value + "T00:00:00");
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+
+                    if (selectedDate < today) {
+                        response.textContent =
+                            "Please select today or a future date.";
+                        return;
+                    }
+                }
+
+                response.textContent =
+                    "Your enquiry details have passed validation. Please use the organisation's official contact method to send your enquiry.";
+
+                response.style.color = "green";
+
+            });
+        }
+    </script>
 
 </body>
 </html>
+

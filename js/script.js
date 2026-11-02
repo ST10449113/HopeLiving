@@ -4,9 +4,15 @@
  */
 
 
-// HOPE OF LIVING - PART 3 JAVASCRIPT
 
-// 1. Mobile navigation menu
+/* =========================================================
+   HOPE OF LIVING - PART 3 JAVASCRIPT
+   Interactive website features
+   ========================================================= */
+
+
+/* 1. MOBILE NAVIGATION MENU */
+
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
@@ -14,32 +20,44 @@ if (menuToggle && navMenu) {
     menuToggle.addEventListener("click", function () {
         navMenu.classList.toggle("active");
 
-        const isOpen = navMenu.classList.contains("active");
-        menuToggle.setAttribute("aria-expanded", isOpen);
+        const isExpanded = navMenu.classList.contains("active");
+        menuToggle.setAttribute("aria-expanded", isExpanded);
     });
 }
 
-// 2. Dynamic services
+
+/* 2. DYNAMIC SERVICES */
+
 const services = [
     {
-        name: "Community Support",
+        title: "Community Support",
         category: "community",
-        description: "Support and assistance for members of our community."
+        description:
+            "Support initiatives that encourage and assist members of the local community."
     },
     {
-        name: "Food Support",
+        title: "Food Support",
         category: "community",
-        description: "Helping families access food and essential resources."
+        description:
+            "Community food support initiatives aimed at helping people in need."
     },
     {
-        name: "Education Support",
+        title: "Education Support",
         category: "education",
-        description: "Encouraging learning and educational development."
+        description:
+            "Activities that encourage learning, skills development and educational opportunities."
     },
     {
-        name: "Community Outreach",
+        title: "Community Outreach",
         category: "outreach",
-        description: "Connecting with people and supporting local initiatives."
+        description:
+            "Outreach activities that bring people together and encourage community participation."
+    },
+    {
+        title: "Volunteer Opportunities",
+        category: "outreach",
+        description:
+            "Opportunities for people to contribute their time and skills to community initiatives."
     }
 ];
 
@@ -47,20 +65,51 @@ const serviceContainer = document.getElementById("serviceContainer");
 const serviceSearch = document.getElementById("serviceSearch");
 const serviceFilter = document.getElementById("serviceFilter");
 
-function displayServices() {
+
+function displayServices(serviceList) {
+    if (!serviceContainer) return;
+
+    serviceContainer.innerHTML = "";
+
+    if (serviceList.length === 0) {
+        serviceContainer.innerHTML =
+            "<p class='no-results'>No services found. Please try another search.</p>";
+        return;
+    }
+
+    serviceList.forEach(function (service) {
+        const serviceCard = document.createElement("article");
+
+        serviceCard.className = "service-card";
+
+        const heading = document.createElement("h3");
+        heading.textContent = service.title;
+
+        const paragraph = document.createElement("p");
+        paragraph.textContent = service.description;
+
+        serviceCard.appendChild(heading);
+        serviceCard.appendChild(paragraph);
+
+        serviceContainer.appendChild(serviceCard);
+    });
+}
+
+
+function filterServices() {
     if (!serviceContainer) return;
 
     const searchText = serviceSearch
-        ? serviceSearch.value.toLowerCase()
+        ? serviceSearch.value.toLowerCase().trim()
         : "";
 
     const selectedCategory = serviceFilter
         ? serviceFilter.value
         : "all";
 
-    const filteredServices = services.filter(service => {
+    const filteredServices = services.filter(function (service) {
         const matchesSearch =
-            service.name.toLowerCase().includes(searchText) ||
+            service.title.toLowerCase().includes(searchText) ||
             service.description.toLowerCase().includes(searchText);
 
         const matchesCategory =
@@ -70,175 +119,132 @@ function displayServices() {
         return matchesSearch && matchesCategory;
     });
 
-    serviceContainer.innerHTML = "";
-
-    if (filteredServices.length === 0) {
-        serviceContainer.textContent = "No services found.";
-        return;
-    }
-
-    filteredServices.forEach(service => {
-        const card = document.createElement("article");
-        card.className = "service-card";
-
-        const heading = document.createElement("h3");
-        heading.textContent = service.name;
-
-        const paragraph = document.createElement("p");
-        paragraph.textContent = service.description;
-
-        card.append(heading, paragraph);
-        serviceContainer.appendChild(card);
-    });
+    displayServices(filteredServices);
 }
+
 
 if (serviceContainer) {
-    displayServices();
-
-    if (serviceSearch) {
-        serviceSearch.addEventListener("input", displayServices);
-    }
-
-    if (serviceFilter) {
-        serviceFilter.addEventListener("change", displayServices);
-    }
+    displayServices(services);
 }
 
-// 3. Accordion feature
-document.querySelectorAll(".accordion-button").forEach(button => {
+if (serviceSearch) {
+    serviceSearch.addEventListener("input", filterServices);
+}
+
+if (serviceFilter) {
+    serviceFilter.addEventListener("change", filterServices);
+}
+
+
+/* 3. FAQ ACCORDION */
+
+const accordionButtons = document.querySelectorAll(".accordion-button");
+
+accordionButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-        const content = this.nextElementSibling;
-        const isOpen = this.getAttribute("aria-expanded") === "true";
+        const content = button.nextElementSibling;
 
-        this.setAttribute("aria-expanded", String(!isOpen));
+        if (!content) return;
 
-        if (content) {
-            content.hidden = isOpen;
-        }
+        const isOpen = button.getAttribute("aria-expanded") === "true";
+
+        button.setAttribute("aria-expanded", String(!isOpen));
+        content.hidden = isOpen;
     });
 });
 
-// 4. Gallery lightbox
+
+/* 4. GALLERY LIGHTBOX */
+
+const galleryImages = document.querySelectorAll(".gallery-image");
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const lightboxClose = document.getElementById("lightboxClose");
 
-document.querySelectorAll(".gallery-image").forEach(image => {
-    image.addEventListener("click", function () {
-        if (!lightbox || !lightboxImage) return;
 
-        lightboxImage.src = this.src;
-        lightboxImage.alt = this.alt;
-        lightbox.hidden = false;
+function openLightbox(image) {
+    if (!lightbox || !lightboxImage) return;
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+
+    if (lightboxClose) {
+        lightboxClose.focus();
+    }
+}
+
+
+function closeLightbox() {
+    if (!lightbox || !lightboxImage) return;
+
+    lightbox.hidden = true;
+    lightboxImage.src = "";
+    document.body.style.overflow = "";
+}
+
+
+galleryImages.forEach(function (image) {
+    image.addEventListener("click", function () {
+        openLightbox(image);
+    });
+
+    image.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openLightbox(image);
+        }
     });
 });
 
-if (lightboxClose && lightbox) {
-    lightboxClose.addEventListener("click", function () {
-        lightbox.hidden = true;
+
+if (lightboxClose) {
+    lightboxClose.addEventListener("click", closeLightbox);
+}
+
+
+if (lightbox) {
+    lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
     });
 }
 
-// 5. Enquiry form validation
-const enquiryForm = document.getElementById("enquiryForm");
 
-if (enquiryForm) {
-    enquiryForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && lightbox && !lightbox.hidden) {
+        closeLightbox();
+    }
+});
 
-        const phone = document.getElementById("enquiryPhone");
-        const response = document.getElementById("enquiryResponse");
 
-        if (!enquiryForm.checkValidity()) {
-            enquiryForm.reportValidity();
-            return;
-        }
+/* 5. SCROLL-REVEAL ANIMATIONS */
 
-        if (phone && !/^(\+27|0)[6-8][0-9]{8}$/.test(phone.value.trim())) {
-            response.textContent =
-                "Please enter a valid South African mobile number.";
-            return;
-        }
-
-        response.textContent =
-            "Your enquiry details are valid. Please submit them using the contact method provided.";
-    });
-}
-
-// 6. Contact form validation
-const contactForm = document.getElementById("contactForm");
-
-if (contactForm) {
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const phone = document.getElementById("contactPhone");
-        const response = document.getElementById("contactResponse");
-
-        if (!contactForm.checkValidity()) {
-            contactForm.reportValidity();
-            return;
-        }
-
-        if (phone && !/^(\+27|0)[6-8][0-9]{8}$/.test(phone.value.trim())) {
-            response.textContent =
-                "Please enter a valid South African mobile number.";
-            return;
-        }
-
-        const name = document.getElementById("contactName").value;
-        const email = document.getElementById("contactEmail").value;
-        const message = document.getElementById("contactMessage").value;
-
-        const subject = encodeURIComponent("Hope of Living enquiry");
-        const body = encodeURIComponent(
-            "Name: " + name +
-            "\nEmail: " + email +
-            "\nMessage: " + message
-        );
-
-        // Replace this placeholder with the organisation's real email.
-        window.location.href =
-            "mailto:REPLACE-WITH-REAL-EMAIL@example.com" +
-            "?subject=" + subject + "&body=" + body;
-
-        response.textContent =
-            "Your email application should open with your message prepared.";
-    });
-}
-
-// 7. Scroll reveal animation
 const revealElements = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
-            }
-        });
-    });
-
-    revealElements.forEach(element => observer.observe(element));
-} else {
-    revealElements.forEach(element => element.classList.add("visible"));
-}
-
-
-// Allow gallery images to open with Enter or Space
-document.querySelectorAll(".gallery-image").forEach(image => {
-    image.addEventListener("keydown", function(event) {
-        if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            image.click();
+    const revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15
         }
-    });
-});
+    );
 
-// Close lightbox using Escape
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape" && lightbox) {
-        lightbox.hidden = true;
-    }
-});
+    revealElements.forEach(function (element) {
+        revealObserver.observe(element);
+    });
+} else {
+    revealElements.forEach(function (element) {
+        element.classList.add("visible");
+    });
+}

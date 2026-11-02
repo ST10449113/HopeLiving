@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery | Hope of Living</title>
+
+    <meta name="description" content="Explore the Hope of Living community gallery and discover activities, programmes and community involvement.">
+
+    <meta name="keywords" content="Hope of Living gallery, community activities, community programmes, Lower Philippi">
+
+    <meta name="author" content="Hope of Living">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <h2>Hope of Living</h2>
+        </div>
+
+        <button id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+                <li><a href="enquiry.html">Get Involved</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- GALLERY INTRODUCTION -->
+        <section class="services-section">
+            <h1>Our Community Gallery</h1>
+
+            <p>
+                Welcome to the Hope of Living gallery.
+                This space celebrates community involvement,
+                shared experiences and activities that bring
+                people together.
+            </p>
+        </section>
+
+        <!-- IMAGE GALLERY -->
+        <section class="services-section">
+
+            <h2>Community Moments</h2>
+
+            <p>
+                Select an image to view it in a larger size.
+            </p>
+
+            <div class="gallery-container">
+
+                <img
+                    src="images/image1.jpg"
+                    alt="Community members participating in an activity"
+                    class="gallery-image"
+                    tabindex="0">
+
+                <img
+                    src="images/image2.jpg"
+                    alt="Community support and outreach activity"
+                    class="gallery-image"
+                    tabindex="0">
+
+                <img
+                    src="images/image3.jpg"
+                    alt="Community members working together"
+                    class="gallery-image"
+                    tabindex="0">
+
+                <img
+                    src="images/image4.jpg"
+                    alt="Community development activity"
+                    class="gallery-image"
+                    tabindex="0">
+
+                <img
+                    src="images/image5.jpg"
+                    alt="Community participation programme"
+                    class="gallery-image"
+                    tabindex="0">
+
+                <img
+                    src="images/image6.jpg"
+                    alt="People coming together to support their community"
+                    class="gallery-image"
+                    tabindex="0">
+
+            </div>
+
+        </section>
+
+        <!-- IMAGE LIGHTBOX -->
+        <div id="lightbox" class="lightbox" hidden>
+
+            <button
+                id="lightboxClose"
+                type="button"
+                aria-label="Close image viewer">
+                ✕ Close
+            </button>
+
+            <img
+                id="lightboxImage"
+                src=""
+                alt="">
+
+        </div>
+
+        <!-- CALL TO ACTION -->
+        <section class="services-section">
+
+            <h2>Be Part of Our Story</h2>
+
+            <p>
+                You can also become part of our community
+                by participating in our programmes and activities.
+            </p>
+
+            <a href="enquiry.html" class="button">
+                Get Involved
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Hope of Living. All rights reserved.</p>
+
+        <p>Building hope through community support.</p>
+
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About Us</a> |
+            <a href="contact.html">Contact</a>
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js" defer></script>
+
+</body>
+</html>

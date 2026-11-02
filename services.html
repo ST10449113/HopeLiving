@@ -1,71 +1,189 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
--->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | Hope of Living</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="js/script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Services | Hope of Living</title>
+
+    <meta name="description" content="Explore the community support, food assistance, education and outreach services offered by Hope of Living.">
+
+    <meta name="keywords" content="Hope of Living, community support, food assistance, education, outreach, Lower Philippi">
+
+    <meta name="author" content="Hope of Living">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<!-- Website header and navigation -->
-    <header class="site-header">
-        <div class="container header-content">
 
-            <a class="logo" href="index.html">
-                Hope <span>of Living</span>
-            </a>
-
-            <nav class="main-nav" aria-label="Main navigation">
-                <a href="./index.html" class="active">Home</a>
-                <a href="./about.html">About Us</a>
-                <a href="./services.html">Services</a>
-                <a href="./enquiry.html">Get Involved</a>
-                <a href="./contact.html">Contact</a>
-            </nav>
-
+    <!-- HEADER AND NAVIGATION -->
+    <header>
+        <div class="logo">
+            <h2>Hope of Living</h2>
         </div>
-    </header>
-<main>
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">HOW WE CAN CONNECT</p>
-      <h1>Services and opportunities</h1>
-      <p class="lead">Explore the areas you may want to ask us about.</p>
-    </div>
-  </section>
 
-  <section class="container section">
-    <div class="notice"><strong>Please note:</strong> Confirm the actual services, prices and availability with the organisation before publishing.</div>
-    <div class="cards">
-      <article class="card">
-        <h3>Community information</h3>
-        <p>Ask about community activities, resources or opportunities that may be available.</p>
-        <a href="enquiry.html?topic=Community">Enquire about this →</a>
-      </article>
-      <article class="card">
-        <h3>Volunteering</h3>
-        <p>Find out how to express interest in volunteering or sharing your skills.</p>
-        <a href="enquiry.html?topic=Make%20an%20Enquiry">Enquire about volunteering →</a>
-      </article>
-      <article class="card">
-        <h3>Partnership and sponsorship</h3>
-        <p>Ask about possible partnerships or sponsorship opportunities.</p>
-        <a href="enquiry.html?topic=Sponsorship">Discuss a partnership →</a>
-      </article>
-      <article class="card">
-        <h3>Products and cultural wear</h3>
-        <p>Ask about products, prices and availability, where applicable.</p>
-        <a href="enquiry.html?topic=Products">Ask about products →</a>
-      </article>
-    </div>
-  </section>
-</main>
-<footer><div class="container"><p>© 2026 Hope of Living.</p></div></footer>
+        <button id="menuToggle" type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" aria-current="page">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="enquiry.html">Get Involved</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- PAGE INTRODUCTION -->
+        <section class="services-section">
+            <h1>Our Services</h1>
+
+            <p>
+                At Hope of Living, we believe that everyone deserves
+                support, opportunities and hope. Our services aim to
+                encourage community development and improve lives.
+            </p>
+        </section>
+
+        <!-- SERVICE SEARCH AND FILTER -->
+        <section class="services-section">
+
+            <h2>Explore Our Programmes</h2>
+
+            <p>
+                Search for a service or select a category to find
+                the support you are looking for.
+            </p>
+
+            <label for="serviceSearch">Search services:</label>
+
+            <input
+                type="search"
+                id="serviceSearch"
+                placeholder="Type a service name..."
+                aria-label="Search services">
+
+            <label for="serviceFilter">Filter by category:</label>
+
+            <select id="serviceFilter">
+                <option value="all">All services</option>
+                <option value="community">Community</option>
+                <option value="education">Education</option>
+                <option value="outreach">Outreach</option>
+            </select>
+
+            <!-- JavaScript displays the services here -->
+            <div id="serviceContainer" class="service-container">
+            </div>
+
+        </section>
+
+        <!-- WHY OUR SERVICES MATTER -->
+        <section class="services-section">
+            <h2>Why Our Services Matter</h2>
+
+            <p>
+                Strong communities are built through cooperation,
+                compassion and support. We aim to create opportunities
+                for individuals and families to improve their
+                circumstances.
+            </p>
+        </section>
+
+        <!-- FREQUENTLY ASKED QUESTIONS -->
+        <section class="faq-section">
+
+            <h2>Frequently Asked Questions</h2>
+
+            <button class="accordion-button"
+                    type="button"
+                    aria-expanded="false">
+                What is Hope of Living?
+            </button>
+
+            <div class="accordion-content" hidden>
+                <p>
+                    Hope of Living is a community-focused initiative
+                    that aims to support individuals and families
+                    through community programmes.
+                </p>
+            </div>
+
+            <button class="accordion-button"
+                    type="button"
+                    aria-expanded="false">
+                How can I get involved?
+            </button>
+
+            <div class="accordion-content" hidden>
+                <p>
+                    You can visit our Get Involved page to enquire
+                    about volunteering and other opportunities.
+                </p>
+            </div>
+
+            <button class="accordion-button"
+                    type="button"
+                    aria-expanded="false">
+                How can I enquire about a service?
+            </button>
+
+            <div class="accordion-content" hidden>
+                <p>
+                    Visit our enquiry page and complete the enquiry
+                    form with your details and the service you are
+                    interested in.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="services-section">
+            <h2>Become Part of the Change</h2>
+
+            <p>
+                Every contribution can make a difference.
+                Join us in supporting and strengthening our community.
+            </p>
+
+            <a href="enquiry.html" class="button">
+                Get Involved
+            </a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Hope of Living. All rights reserved.</p>
+
+        <p>
+            Building hope through community support.
+        </p>
+
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a> |
+            <a href="contact.html">Contact</a>
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js" defer></script>
+
 </body>
 </html>

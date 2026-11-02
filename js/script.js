@@ -138,19 +138,31 @@ if (serviceFilter) {
 
 /* 3. FAQ ACCORDION */
 
-const accordionButtons = document.querySelectorAll(".accordion-button");
+// FAQ ACCORDION
+document.addEventListener("DOMContentLoaded", function () {
 
-accordionButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-        const content = button.nextElementSibling;
+    const accordionButtons = document.querySelectorAll(".accordion-button");
 
-        if (!content) return;
+    accordionButtons.forEach(function (button) {
 
-        const isOpen = button.getAttribute("aria-expanded") === "true";
+        button.addEventListener("click", function () {
 
-        button.setAttribute("aria-expanded", String(!isOpen));
-        content.hidden = isOpen;
+            const content = button.nextElementSibling;
+
+            if (!content) {
+                console.log("FAQ answer not found.");
+                return;
+            }
+
+            const isOpen = button.getAttribute("aria-expanded") === "true";
+
+            button.setAttribute("aria-expanded", !isOpen);
+            content.hidden = isOpen;
+
+        });
+
     });
+
 });
 
 

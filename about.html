@@ -1,83 +1,222 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
--->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>About Us | Hope of Living</title>
-    <link rel="stylesheet" href="./css/style.css">
+
+    <meta name="description" content="Learn about Hope of Living, our community-focused purpose, values and commitment to supporting people and families.">
+
+    <meta name="keywords" content="Hope of Living, about us, community development, community support, Lower Philippi">
+
+    <meta name="author" content="Hope of Living">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- Website header and navigation -->
-    <header class="site-header">
-        <div class="container header-content">
-
-            <a class="logo" href="index.html">
-                Hope <span>of Living</span>
-            </a>
-
-            <nav class="main-nav" aria-label="Main navigation">
-                <a href="./index.html" class="active">Home</a>
-                <a href="./about.html">About Us</a>
-                <a href="./services.html">Services</a>
-                <a href="./enquiry.html">Get Involved</a>
-                <a href="./contact.html">Contact</a>
-            </nav>
-
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <h2>Hope of Living</h2>
         </div>
+
+        <button id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" aria-current="page">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="enquiry.html">Get Involved</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-<main>
-    <section class="hero">
-        <h1>About Hope of Living</h1>
-        <p>Building hope, supporting people and strengthening our community.</p>
-    </section>
+    <!-- MAIN CONTENT -->
+    <main>
 
-    <section>
-        <h2>Who We Are</h2>
+        <!-- ABOUT INTRODUCTION -->
+        <section class="services-section">
+            <h1>About Hope of Living</h1>
+
+            <p>
+                Hope of Living is a community-focused initiative
+                based in Lower Philippi, Cape Town. Our purpose is
+                to encourage positive change by supporting people
+                and strengthening communities.
+            </p>
+        </section>
+
+        <!-- OUR STORY -->
+        <section class="services-section">
+            <h2>Our Story</h2>
+
+            <p>
+                Every community has people with different needs,
+                experiences and dreams. Hope of Living recognises
+                the importance of coming together to create
+                opportunities and offer support.
+            </p>
+
+            <p>
+                Through community involvement, cooperation and
+                shared responsibility, we aim to contribute
+                towards a stronger and more hopeful future.
+            </p>
+        </section>
+
+        <!-- OUR MISSION -->
+        <section class="services-section">
+            <h2>Our Mission</h2>
+
+            <p>
+                Our mission is to promote community support,
+                encourage participation and help create
+                opportunities that can improve people's lives.
+            </p>
+        </section>
+
+        <!-- OUR VISION -->
+        <section class="services-section">
+            <h2>Our Vision</h2>
+
+            <p>
+                Our vision is to see stronger, more connected
+                communities where individuals and families
+                have opportunities to grow and thrive.
+            </p>
+        </section>
+
+        <!-- OUR VALUES -->
+        <section class="services-section">
+            <h2>Our Values</h2>
+
+            <div class="service-container">
+
+                <article class="service-card">
+                    <h3>Compassion</h3>
+                    <p>
+                        Treating people with kindness, care and
+                        understanding.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Community</h3>
+                    <p>
+                        Encouraging cooperation and supporting
+                        one another.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Respect</h3>
+                    <p>
+                        Valuing every individual and treating
+                        everyone with dignity.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Hope</h3>
+                    <p>
+                        Believing in positive change and better
+                        opportunities for the future.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- FREQUENTLY ASKED QUESTIONS -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <button class="accordion-button"
+                    type="button"
+                    aria-expanded="false">
+                Where is Hope of Living based?
+            </button>
+
+            <div class="accordion-content" hidden>
+                <p>
+                    Hope of Living is based in Lower Philippi,
+                    Cape Town, South Africa.
+                </p>
+            </div>
+
+            <button class="accordion-button"
+                    type="button"
+                    aria-expanded="false">
+                What is the purpose of Hope of Living?
+            </button>
+
+            <div class="accordion-content" hidden>
+                <p>
+                    Its purpose is to encourage community
+                    development and support people through
+                    community-focused initiatives.
+                </p>
+            </div>
+
+            <button class="accordion-button"
+                    type="button"
+                    aria-expanded="false">
+                How can I participate?
+            </button>
+
+            <div class="accordion-content" hidden>
+                <p>
+                    You can visit the Get Involved page to
+                    enquire about opportunities to participate.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="services-section">
+            <h2>Help Us Build a Better Community</h2>
+
+            <p>
+                Together, we can encourage positive change
+                and create a future filled with hope.
+            </p>
+
+            <a href="enquiry.html" class="button">
+                Get Involved
+            </a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Hope of Living. All rights reserved.</p>
+
+        <p>Building hope through community support.</p>
+
         <p>
-            Hope of Living is a community-focused initiative based in
-            Lower Philipp, Cape Town. We aim to encourage positive change
-            by connecting people with opportunities, support and resources.
+            <a href="index.html">Home</a> |
+            <a href="services.html">Services</a> |
+            <a href="contact.html">Contact</a>
         </p>
-    </section>
+    </footer>
 
-    <section>
-        <h2>Our Mission</h2>
-        <p>
-            Our mission is to promote hope, dignity and community development
-            by making support and opportunities more accessible.
-        </p>
-    </section>
-
-    <section>
-        <h2>Our Vision</h2>
-        <p>
-            We envision a connected and empowered community where people
-            can learn, grow and work towards a better future.
-        </p>
-    </section>
-
-    <section>
-        <h2>Our Values</h2>
-        <ul>
-            <li>Community and togetherness</li>
-            <li>Respect and dignity</li>
-            <li>Hope and encouragement</li>
-            <li>Responsibility and service</li>
-        </ul>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2026 Hope of Living. All rights reserved.</p>
-</footer>
+    <!-- JAVASCRIPT -->
+    <script src="script.js" defer></script>
 
 </body>
 </html>
-```

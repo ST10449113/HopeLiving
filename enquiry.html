@@ -1,168 +1,167 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Enquire about Hope of Living services, volunteering, partnerships and cultural wear.">
-    <title>Enquiries | Hope of Living</title>
-    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Get Involved | Hope of Living</title>
+
+    <meta name="description" content="Get involved with Hope of Living. Enquire about volunteering, community programmes and ways to support the community.">
+
+    <meta name="keywords" content="Hope of Living, volunteer, community support, get involved, Lower Philippi">
+
+    <meta name="author" content="Hope of Living">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="site-header">
-    <div class="container header-content">
-        <a class="logo" href="./index.html">
-            Hope <span>of Living</span>
-        </a>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <h2>Hope of Living</h2>
+        </div>
 
-        <nav class="main-nav" aria-label="Main navigation">
-            <a href="./index.html">Home</a>
-            <a href="./about.html">About Us</a>
-            <a href="./services.html">Services</a>
-            <a href="./get-involved.html">Get Involved</a>
-            <a href="./contact.html">Contact</a>
+        <button id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="enquiry.html" aria-current="page">Get Involved</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
-    </div>
-</header>
+    </header>
 
-<main>
-    <section class="page-banner">
-        <p class="eyebrow">WE ARE HERE TO HELP</p>
-        <h1>Make an Enquiry</h1>
-        <p>Ask us about services, cultural wear, volunteering,
-           partnerships, sponsorships, costs and availability.</p>
-    </section>
+    <!-- MAIN CONTENT -->
+    <main>
 
-    <section class="section">
-        <div class="form-section">
+        <section class="services-section">
+            <h1>Get Involved</h1>
 
-            <div class="form-intro">
-                <p class="eyebrow">LET'S CONNECT</p>
-                <h2>How can we help you?</h2>
+            <p>
+                Would you like to become part of Hope of Living?
+                Complete the form below to enquire about our
+                community programmes and opportunities.
+            </p>
+        </section>
 
-                <p>
-                    Complete the enquiry form with your details and
-                    tell us what you would like to know. Please provide
-                    as much information as possible so your enquiry is clear.
-                </p>
+        <!-- ENQUIRY FORM -->
+        <section class="form-section">
 
-                <div class="notice">
-                    <p><strong>Please note:</strong> Prices, services and
-                    availability must be confirmed directly with the
-                    organisation. Submitting this form does not confirm
-                    a booking or purchase.</p>
-                </div>
-            </div>
+            <h2>Community Enquiry Form</h2>
 
-            <form class="website-form" id="enquiry-form">
-                <label for="enquiry-name">Full name *</label>
-                <input type="text" id="enquiry-name" name="name"
-                       minlength="2" required>
+            <form id="enquiryForm">
 
-                <label for="enquiry-email">Email address *</label>
-                <input type="email" id="enquiry-email" name="email"
-                       required>
+                <!-- FULL NAME -->
+                <label for="enquiryName">Full Name *</label>
 
-                <label for="enquiry-type">What are you enquiring about? *</label>
-                <select id="enquiry-type" name="enquiryType" required>
-                    <option value="">Select an enquiry type</option>
-                    <option value="Services">Services</option>
-                    <option value="Cultural wear">Cultural wear or products</option>
+                <input
+                    type="text"
+                    id="enquiryName"
+                    name="name"
+                    placeholder="Enter your full name"
+                    minlength="2"
+                    maxlength="60"
+                    required>
+
+                <!-- EMAIL -->
+                <label for="enquiryEmail">Email Address *</label>
+
+                <input
+                    type="email"
+                    id="enquiryEmail"
+                    name="email"
+                    placeholder="example@email.com"
+                    required>
+
+                <!-- PHONE -->
+                <label for="enquiryPhone">Phone Number *</label>
+
+                <input
+                    type="tel"
+                    id="enquiryPhone"
+                    name="phone"
+                    placeholder="e.g. 0821234567"
+                    pattern="(\+27|0)[6-8][0-9]{8}"
+                    title="Enter a valid South African mobile number."
+                    required>
+
+                <!-- ENQUIRY TYPE -->
+                <label for="enquiryType">What are you interested in? *</label>
+
+                <select id="enquiryType" name="enquiryType" required>
+
+                    <option value="">Select an option</option>
                     <option value="Volunteering">Volunteering</option>
-                    <option value="Partnership">Partnership</option>
+                    <option value="Community Support">Community Support</option>
+                    <option value="Food Support">Food Support</option>
+                    <option value="Education Support">Education Support</option>
                     <option value="Sponsorship">Sponsorship</option>
+                    <option value="Donations">Donations</option>
                     <option value="Other">Other</option>
+
                 </select>
 
-                <label for="enquiry-item">Service or product of interest</label>
-                <input type="text" id="enquiry-item" name="item"
-                       placeholder="Enter the service or product">
+                <!-- PREFERRED DATE -->
+                <label for="enquiryDate">Preferred Date (if applicable)</label>
 
-                <label for="enquiry-cost">Cost or budget question</label>
-                <input type="text" id="enquiry-cost" name="cost"
-                       placeholder="e.g. Please provide pricing information">
+                <input
+                    type="date"
+                    id="enquiryDate"
+                    name="preferredDate">
 
-                <label for="enquiry-availability">Availability question</label>
-                <input type="text" id="enquiry-availability"
-                       name="availability"
-                       placeholder="e.g. Please confirm available dates or sizes">
+                <!-- MESSAGE -->
+                <label for="enquiryMessage">Tell us more about your enquiry *</label>
 
-                <label for="enquiry-message">Additional details *</label>
-                <textarea id="enquiry-message" name="message"
-                          rows="5" minlength="10" maxlength="1500"
-                          placeholder="Tell us more about your enquiry..."
-                          required></textarea>
+                <textarea
+                    id="enquiryMessage"
+                    name="message"
+                    rows="5"
+                    minlength="10"
+                    maxlength="500"
+                    placeholder="Write your enquiry here..."
+                    required></textarea>
 
-                <button class="button button-orange" type="submit">
-                    Prepare Enquiry Email
+                <!-- SUBMIT -->
+                <button type="submit" class="button">
+                    Submit Enquiry
                 </button>
 
-                <p class="form-note">
-                    Fields marked * are required. Your email application
-                    will open so you can review and send your enquiry.
-                </p>
+                <p id="enquiryResponse" role="status" aria-live="polite"></p>
 
-                <div id="enquiry-response" class="form-response"
-                     aria-live="polite"></div>
             </form>
 
-        </div>
-    </section>
-</main>
+        </section>
 
-<footer class="site-footer">
-    <p>Building hope through community and opportunity.</p>
-    <p>&copy; 2026 Hope of Living. All rights reserved.</p>
-</footer>
+    </main>
 
-<script>
-document.getElementById("enquiry-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Hope of Living. All rights reserved.</p>
 
-    const form = this;
-    const response = document.getElementById("enquiry-response");
+        <p>Building hope through community support.</p>
 
-    if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-    }
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="services.html">Services</a> |
+            <a href="contact.html">Contact</a>
+        </p>
+    </footer>
 
-    const name = document.getElementById("enquiry-name").value.trim();
-    const email = document.getElementById("enquiry-email").value.trim();
-    const type = document.getElementById("enquiry-type").value;
-    const item = document.getElementById("enquiry-item").value.trim();
-    const cost = document.getElementById("enquiry-cost").value.trim();
-    const availability = document.getElementById("enquiry-availability").value.trim();
-    const message = document.getElementById("enquiry-message").value.trim();
-
-    const recipient = "REPLACE-WITH-VERIFIED-EMAIL@example.com";
-
-    if (recipient === "REPLACE-WITH-VERIFIED-EMAIL@example.com") {
-        response.className = "form-response error";
-        response.textContent =
-            "The form is valid, but the organisation's verified email address must be added before enquiries can be sent.";
-        return;
-    }
-
-    const subject = encodeURIComponent("Hope of Living enquiry: " + type);
-    const body = encodeURIComponent(
-        "Name: " + name + "\n" +
-        "Email: " + email + "\n" +
-        "Enquiry type: " + type + "\n" +
-        "Service/product: " + (item || "Not specified") + "\n" +
-        "Cost question: " + (cost || "Not specified") + "\n" +
-        "Availability question: " + (availability || "Not specified") + "\n\n" +
-        "Additional details:\n" + message
-    );
-
-    response.className = "form-response success";
-    response.textContent = "Your enquiry is ready. Your email application will open for you to review and send it.";
-
-    window.location.href = "mailto:" + recipient +
-        "?subject=" + subject + "&body=" + body;
-});
-</script>
+    <!-- JAVASCRIPT -->
+    <script src="script.js" defer></script>
 
 </body>
 </html>
-

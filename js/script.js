@@ -225,3 +225,20 @@ if ("IntersectionObserver" in window) {
     revealElements.forEach(element => element.classList.add("visible"));
 }
 
+
+// Allow gallery images to open with Enter or Space
+document.querySelectorAll(".gallery-image").forEach(image => {
+    image.addEventListener("keydown", function(event) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            image.click();
+        }
+    });
+});
+
+// Close lightbox using Escape
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape" && lightbox) {
+        lightbox.hidden = true;
+    }
+});

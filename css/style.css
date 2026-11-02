@@ -7,24 +7,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Author     : Student
 */
 
-/* =========================================
-   HOPE OF LIVING - MAIN STYLESHEET
-   Colour palette: green, orange, gold, cream
-   ========================================= */
+
+/* =====================================================
+   HOPE OF LIVING - COMPLETE WEBSITE STYLESHEET
+   Part 2 design preserved and Part 3 styling added.
+   Colour palette: Green, Orange, Gold and Cream.
+   ===================================================== */
+
+
+/* 1. COLOUR VARIABLES */
 
 :root {
     --green: #185C37;
     --green-dark: #103D27;
+    --green-light: #4B9463;
+
     --orange: #E87524;
     --orange-dark: #B84D12;
+
     --gold: #FFD166;
     --cream: #FFF9EF;
     --peach: #FCE4C7;
     --white: #FFFFFF;
+
     --text: #26352B;
     --muted: #647166;
     --border: #E6E2D8;
+
+    --shadow: 0 5px 18px rgba(16, 61, 39, 0.08);
 }
+
+
+/* 2. GENERAL STYLING */
 
 * {
     box-sizing: border-box;
@@ -42,8 +56,24 @@ body {
     line-height: 1.7;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 a {
     color: var(--green);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+[hidden] {
+    display: none !important;
 }
 
 a:focus-visible,
@@ -55,12 +85,56 @@ textarea:focus-visible {
     outline-offset: 3px;
 }
 
-/* Navigation */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-.site-header {
+.section,
+.section-padding {
+    padding: 65px 0;
+}
+
+.eyebrow {
+    color: var(--orange-dark);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0 0 12px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.25;
+}
+
+h2 {
+    color: var(--green-dark);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-top: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
+
+/* 3. HEADER AND NAVIGATION */
+
+.site-header,
+header {
     background: var(--green);
     color: var(--white);
+}
+
+.site-header {
     padding: 18px 6%;
+}
+
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -68,6 +142,7 @@ textarea:focus-visible {
     flex-wrap: wrap;
 }
 
+.logo,
 .brand {
     color: var(--white);
     text-decoration: none;
@@ -76,6 +151,7 @@ textarea:focus-visible {
     letter-spacing: -0.5px;
 }
 
+.logo span,
 .brand span {
     color: var(--gold);
 }
@@ -88,22 +164,37 @@ textarea:focus-visible {
     flex-wrap: wrap;
 }
 
-.main-nav a {
+.main-nav a,
+#navMenu a {
     color: var(--white);
     text-decoration: none;
     padding: 9px 12px;
     border-radius: 5px;
     font-weight: bold;
     font-size: 0.94rem;
+    transition: 0.2s ease;
 }
 
 .main-nav a:hover,
-.main-nav a.active {
+.main-nav a.active,
+#navMenu a:hover,
+#navMenu a.active {
     color: var(--green-dark);
     background: var(--gold);
 }
 
-/* Homepage hero */
+#menuToggle {
+    display: none;
+    padding: 9px 14px;
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+}
+
+
+/* 4. HOMEPAGE HERO */
 
 .hero {
     display: grid;
@@ -117,14 +208,6 @@ textarea:focus-visible {
     align-self: center;
 }
 
-.eyebrow {
-    color: var(--orange-dark);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin: 0 0 12px;
-}
-
 .hero h1 {
     font-size: clamp(2.5rem, 5vw, 4.4rem);
     line-height: 1.1;
@@ -136,6 +219,7 @@ textarea:focus-visible {
     color: var(--orange-dark);
 }
 
+.hero-text,
 .hero-content > p:not(.eyebrow) {
     max-width: 540px;
     font-size: 1.08rem;
@@ -145,21 +229,26 @@ textarea:focus-visible {
     min-height: 340px;
     background-color: #D8B47A;
     background-image:
-        linear-gradient(135deg, rgba(24, 92, 55, 0.15),
-        rgba(232, 117, 36, 0.15)),
+        linear-gradient(
+            135deg,
+            rgba(24, 92, 55, 0.15),
+            rgba(232, 117, 36, 0.15)
+        ),
         url("https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=85");
     background-size: cover;
     background-position: center;
 }
 
-.hero-actions {
+.hero-actions,
+.hero-buttons {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
     margin-top: 26px;
 }
 
-/* Buttons */
+
+/* 5. BUTTONS */
 
 .button {
     display: inline-block;
@@ -179,13 +268,16 @@ textarea:focus-visible {
     transform: translateY(-2px);
 }
 
+.button-primary,
 .button-orange {
     background: var(--orange);
     color: var(--white);
 }
 
+.button-primary:hover,
 .button-orange:hover {
     background: var(--orange-dark);
+    color: var(--white);
 }
 
 .button-outline {
@@ -207,18 +299,38 @@ textarea:focus-visible {
     background: var(--green);
 }
 
-/* General sections */
-
-.section {
-    padding: 65px 7%;
+.button-light {
+    background: var(--white);
+    color: var(--green-dark);
+    border-color: var(--white);
 }
 
-.section h2,
-.callout h2 {
-    color: var(--green-dark);
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    line-height: 1.25;
-    margin: 0 0 16px;
+.button-light:hover {
+    background: var(--gold);
+}
+
+
+/* 6. INTRODUCTION AND GENERAL SECTIONS */
+
+.intro {
+    background: var(--cream);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 35px;
+}
+
+.section-heading p:last-child {
+    color: var(--muted);
 }
 
 .intro-section {
@@ -231,12 +343,63 @@ textarea:focus-visible {
     color: var(--muted);
 }
 
-.card-grid {
+
+/* 7. VALUES PANEL */
+
+.values-panel {
+    background: var(--green);
+    color: var(--white);
+    padding: 32px;
+    border-radius: 12px;
+    border-bottom: 7px solid var(--gold);
+}
+
+.values-panel h3 {
+    color: var(--gold);
+    margin-top: 0;
+}
+
+.value-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.value-item:last-child {
+    border-bottom: none;
+}
+
+.value-number {
+    color: var(--gold);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.value-item h4 {
+    margin: 0 0 5px;
+    color: var(--white);
+}
+
+.value-item p {
+    margin: 0;
+    color: #E4EDE5;
+}
+
+
+/* 8. CARDS AND OPPORTUNITIES */
+
+.opportunities {
+    background: #F4EBDD;
+}
+
+.card-grid,
+.cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     margin-top: 35px;
-    text-align: left;
 }
 
 .info-card,
@@ -245,7 +408,14 @@ textarea:focus-visible {
     border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 18px rgba(16, 61, 39, 0.06);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.info-card:hover,
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(16, 61, 39, 0.13);
 }
 
 .info-card {
@@ -253,22 +423,26 @@ textarea:focus-visible {
 }
 
 .info-card h3,
+.service-card h3,
 .service-body h3 {
     color: var(--green-dark);
     margin: 12px 0;
 }
 
 .info-card p,
+.service-card p,
 .service-body p {
     color: var(--muted);
 }
 
-.info-card a {
+.info-card a,
+.text-link {
     font-weight: bold;
     text-decoration: none;
 }
 
-.info-card a:hover {
+.info-card a:hover,
+.text-link:hover {
     color: var(--orange-dark);
 }
 
@@ -283,7 +457,8 @@ textarea:focus-visible {
     font-size: 1.5rem;
 }
 
-/* Page title banners */
+
+/* 9. PAGE BANNERS */
 
 .page-banner {
     padding: 65px 7%;
@@ -301,7 +476,8 @@ textarea:focus-visible {
     margin-bottom: 0;
 }
 
-/* About page */
+
+/* 10. ABOUT PAGE */
 
 .about-layout {
     display: grid;
@@ -332,7 +508,23 @@ textarea:focus-visible {
     background: #F4EBDD;
 }
 
-/* Services page */
+
+/* 11. SERVICES PAGE */
+
+.services-section {
+    padding: 65px 0;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.service-card {
+    padding: 25px;
+}
 
 .service-visual {
     min-height: 210px;
@@ -365,29 +557,133 @@ textarea:focus-visible {
     margin-top: 10px;
 }
 
-/* Call to action */
+.service-search,
+.service-filter {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 12px auto;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--text);
+    font: inherit;
+}
 
-.callout {
-    background: var(--gold);
-    padding: 40px 7%;
+.no-results {
+    grid-column: 1 / -1;
+    padding: 25px;
+    text-align: center;
+    background: var(--white);
+    border-radius: 8px;
+}
+
+
+/* 12. FAQ ACCORDION */
+
+.faq-section {
+    padding: 60px 0;
+    background: #F4EBDD;
+}
+
+.accordion-button {
+    display: block;
+    width: 100%;
+    padding: 18px 20px;
+    margin: 10px 0 0;
+    text-align: left;
+    color: var(--green-dark);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.accordion-button:hover {
+    background: var(--peach);
+}
+
+.accordion-content {
+    padding: 18px 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: none;
+}
+
+
+/* 13. GALLERY */
+
+.gallery-section {
+    padding: 65px 0;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.gallery-image {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+
+.gallery-image:hover {
+    transform: scale(1.03);
+}
+
+
+/* Gallery lightbox */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    gap: 25px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.9);
 }
 
-.callout h2 {
-    max-width: 650px;
-    margin-bottom: 0;
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
 }
 
-/* Forms */
+#lightboxClose {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background: var(--gold);
+    color: var(--green-dark);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* 14. FORMS */
 
 .form-section {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     gap: 55px;
     align-items: start;
+    padding: 65px 0;
 }
 
 .form-intro > p:not(.eyebrow) {
@@ -406,28 +702,40 @@ textarea:focus-visible {
     margin-bottom: 0;
 }
 
-.website-form {
+.website-form,
+#enquiryForm,
+#contactForm {
     background: var(--white);
     border: 1px solid var(--border);
     padding: 32px;
     border-radius: 12px;
-    box-shadow: 0 6px 22px rgba(16, 61, 39, 0.07);
+    box-shadow: var(--shadow);
 }
 
-.website-form label {
+.website-form label,
+#enquiryForm label,
+#contactForm label {
     display: block;
     margin: 18px 0 7px;
     color: var(--green-dark);
     font-weight: bold;
 }
 
-.website-form label:first-child {
+.website-form label:first-child,
+#enquiryForm label:first-child,
+#contactForm label:first-child {
     margin-top: 0;
 }
 
 .website-form input,
 .website-form select,
-.website-form textarea {
+.website-form textarea,
+#enquiryForm input,
+#enquiryForm select,
+#enquiryForm textarea,
+#contactForm input,
+#contactForm select,
+#contactForm textarea {
     display: block;
     width: 100%;
     padding: 12px;
@@ -438,18 +746,28 @@ textarea:focus-visible {
     background: var(--white);
 }
 
-.website-form textarea {
+.website-form textarea,
+#enquiryForm textarea,
+#contactForm textarea {
     resize: vertical;
 }
 
 .website-form input:focus,
 .website-form select:focus,
-.website-form textarea:focus {
+.website-form textarea:focus,
+#enquiryForm input:focus,
+#enquiryForm select:focus,
+#enquiryForm textarea:focus,
+#contactForm input:focus,
+#contactForm select:focus,
+#contactForm textarea:focus {
     border-color: var(--green);
     outline: 2px solid rgba(24, 92, 55, 0.15);
 }
 
-.website-form button {
+.website-form button,
+#enquiryForm button,
+#contactForm button {
     margin-top: 24px;
 }
 
@@ -458,7 +776,9 @@ textarea:focus-visible {
     color: var(--muted);
 }
 
-.form-response {
+.form-response,
+#enquiryResponse,
+#contactResponse {
     margin-top: 16px;
     padding: 14px;
     border-radius: 6px;
@@ -469,47 +789,101 @@ textarea:focus-visible {
     display: none;
 }
 
-.form-response.success {
-    background: #E5F5E8;
-    color: #185C37;
-    border: 1px solid #A7D7B2;
+
+/* 15. CALL TO ACTION */
+
+.callout,
+.call-to-action {
+    background: var(--gold);
+    padding: 40px 7%;
 }
 
-.form-response.error {
-    background: #FCE8E6;
-    color: #9B2525;
-    border: 1px solid #E7B5B1;
+.callout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
 }
 
-/* Footer */
+.callout h2 {
+    max-width: 650px;
+    margin-bottom: 0;
+}
 
-.site-footer {
+.cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.cta-content h2 {
+    color: var(--green-dark);
+    margin-bottom: 0;
+}
+
+
+/* 16. FOOTER */
+
+.site-footer,
+footer {
     background: var(--green-dark);
     color: var(--white);
-    text-align: center;
+}
+
+.site-footer {
     padding: 32px 6%;
 }
 
-.footer-brand {
-    display: inline-block;
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
 }
 
-.site-footer p {
+.footer-logo,
+.footer-brand {
+    display: inline-block;
+    color: var(--white);
+}
+
+.footer-logo span {
+    color: var(--gold);
+}
+
+.site-footer p,
+footer p {
     margin: 8px 0;
     color: #E4EDE5;
     font-size: 0.92rem;
 }
 
-/* Responsive layout for phones and tablets */
+.copyright {
+    text-align: right;
+}
 
-@media (max-width: 850px) {
-    .site-header {
-        justify-content: center;
-        text-align: center;
-    }
 
-    .main-nav {
-        width: 100%;
+/* 17. SCROLL REVEAL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 18. RESPONSIVE DESIGN - TABLETS */
+
+@media screen and (max-width: 960px) {
+
+    .container {
+        width: 92%;
     }
 
     .hero {
@@ -524,90 +898,131 @@ textarea:focus-visible {
         min-height: 300px;
     }
 
-    .card-grid {
+    .card-grid,
+    .cards,
+    .service-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .intro-grid,
     .about-layout,
     .form-section {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-}
 
-@media (max-width: 550px) {
-    .section {
-        padding: 45px 5%;
+    .header-content {
+        flex-wrap: wrap;
     }
 
-    .card-grid {
-        grid-template-columns: 1fr;
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* 19. RESPONSIVE DESIGN - MOBILE */
+
+@media screen and (max-width: 600px) {
+
+    .section,
+    .section-padding {
+        padding: 45px 0;
+    }
+
+    .site-header {
+        padding: 16px 5%;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo,
+    .brand {
+        font-size: 1.45rem;
     }
 
     .main-nav {
         gap: 3px;
     }
 
-    .main-nav a {
+    .main-nav a,
+    #navMenu a {
         padding: 8px;
         font-size: 0.84rem;
     }
 
-    .hero-actions {
+    .card-grid,
+    .cards,
+    .service-container,
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        padding: 45px 6%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-actions,
+    .hero-buttons {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .callout {
+    .callout,
+    .cta-content,
+    .footer-content {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .website-form {
+    .website-form,
+    #enquiryForm,
+    #contactForm {
         padding: 22px;
     }
 
     .page-banner {
         padding: 45px 5%;
     }
-}
 
-/* Part 2: Responsive design for screens below 960px */
-@media screen and (max-width: 960px) {
-    .container {
-        width: 92%;
-        max-width: 100%;
+    .gallery-image {
+        height: 230px;
     }
 
-    .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
-    }
-
-    .header-content {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .main-nav {
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
+    .copyright {
+        text-align: left;
     }
 }
 
-/* Mobile screens */
-@media screen and (max-width: 550px) {
-    .cards {
-        grid-template-columns: 1fr;
+
+/* 20. ACCESSIBILITY - REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 
-    .main-nav {
-        flex-direction: column;
-        align-items: flex-start;
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
     }
 }
